@@ -1,4 +1,5 @@
 export interface ITodo {
 	label: string,
-	isChecked: boolean
+	isChecked: boolean,
+	isImportant: boolean
 }

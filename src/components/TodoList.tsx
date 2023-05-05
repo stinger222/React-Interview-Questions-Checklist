@@ -7,22 +7,32 @@ interface IProps {
 }
 
 const TodoList: React.FC<IProps> = ({ defaultTodos }) => {
-	const [todos, setTodos] = useLocalStorage('todos', defaultTodos)
+	const {value: todos, setValue: setTodos} = useLocalStorage<ITodo[]>('todos', defaultTodos)
 
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>, label: string) => {
-		console.log(label);
 		setTodos(todos.map(i => i.label === label ? {...i, isChecked: e.target.checked} : i))
 	}
 
+	const handleHightlight = (label: string) => {		
+		setTodos(todos.map(i => i.label === label ? {...i, isImportant: !i.isImportant} : i))
+	}
 
 	const handleDelete = (label: string) => {
 		setTodos(todos.filter(i => i.label !== label))
 	}
-
+	
 	return (
 		<div>
 			{
-				todos.map(i => <TodoItem {...i} onCheck={handleCheck} onDelete={handleDelete} key={i.label}/>)
+				todos.map(todo => (
+					<TodoItem
+						todo={todo}
+						onCheck={handleCheck}
+						onHighlight={handleHightlight}
+						onDelete={handleDelete}
+						key={todo.label}
+					/>
+				))
 			}
 		</div>
 	)

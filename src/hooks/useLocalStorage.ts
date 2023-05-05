@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-export const useLocalStorage = (key: string, defalutValue: any) => {
-	const calculateDick = () => {
-		const storedValue = localStorage.getItem(key)?.trim()
+export function useLocalStorage<T> (key: string, defalutValue: T) {
+  const calculateValue = (): T => {
+    const storedValue = localStorage.getItem(key)?.trim()
 
-		return storedValue ? JSON.parse(storedValue).length > 0 ? JSON.parse(storedValue) : defalutValue : defalutValue
-	}
+    return storedValue ? JSON.parse(storedValue).length > 0 ? JSON.parse(storedValue) : defalutValue : defalutValue
+  }
 
-	const [value, setValue] = useState(calculateDick())
+  const [value, setValue] = useState<T>(calculateValue())
 
+  const setLocalStorageValue = (newValue: T) => {
+    localStorage.setItem(key, JSON.stringify(newValue))
+    setValue(newValue)
+  }
 
-	useEffect(() => {
-		localStorage.setItem(key, JSON.stringify(value))
-	}, [value])
-	
-	return [value, setValue]
+  return { value, setValue: setLocalStorageValue }
 }
