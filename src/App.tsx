@@ -1,4 +1,3 @@
-import './App.css'
 import TodoList from './components/TodoList'
 import { rawTodos } from './constants'
 import { IRawTodo, ITodo } from './types'

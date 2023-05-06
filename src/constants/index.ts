@@ -1,5 +1,7 @@
 import { IRawTodo } from "../types"
 
+export const LS_KEY = 'interview_questions'
+
 export const rawTodos: IRawTodo[] = [
 	{
 		label: "What is React?",

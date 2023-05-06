@@ -11,6 +11,7 @@
 .todoItem {
 	margin-bottom: 0.5em;
 	padding: 0.3em;
+	border-radius: 0.5em;
 }
 
 .todoLabel {
@@ -30,6 +31,24 @@
 
 .controls button {
 	margin-right: 0.5em;
+}
+
+.reset {
+	font-size: 1.3em;
+
+	position: fixed;
+	bottom: 0.3em;
+	right: 0;
+
+	border-radius: 10em;
+	padding: 0.2em 0.5em;
+	cursor: pointer;
+	border: 0.05em solid currentColor;
+	transition: color 0.2s;
+}
+
+.reset:hover {
+	color: rgb(243, 34, 34);
 }
 
 a {
@@ -80,8 +99,20 @@ input[type="checkbox"] {
 		background: rgb(243, 243, 243);
 	}
 
+	.todoList {
+		padding-top: 2.5em;
+	}
+
 	.controls {
 		display: block;
+	}
+
+	.reset {
+		position: absolute;
+		top: 0.2em;
+		bottom: initial;
+		right: 50%;
+		translate: 50% 0;
 	}
 }
 
