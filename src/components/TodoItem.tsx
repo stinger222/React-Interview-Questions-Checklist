@@ -1,4 +1,5 @@
 import { ITodo } from "../types"
+import styles from "../styles/index.module.css"
 
 interface IProps {
 	todo: ITodo,
@@ -9,31 +10,25 @@ interface IProps {
 
 const TodoItem: React.FC<IProps> = ({todo, onCheck, onDelete, onHighlight}) => {	
 	return (
-		<div style={{textAlign: "start"}}>
+		<div className={styles.todoItem}>
 			<input
 				type="checkbox"
 				checked={todo.isChecked}
 				onChange={(e) => onCheck(e, todo.label)}
-		/>
+			/>
 
-			<span
-				style={{ color: todo.isImportant ? 'royalblue': 'black', cursor: 'pointer'}}
-				onClick={() => onHighlight(todo.label)}
-			>
+			<span className={`${styles.todoLabel} ${todo.isImportant ? styles.highlighted : ''}`} onClick={() => onHighlight(todo.label)}>
 				{todo.label}
 			</span>
 
-			<button
-				style={{height: '10px',width: '10px', padding:'10px'}}
-				onClick={() => onDelete(todo.label)}
-			>x</button>
 
-			<a href={todo.link} target="_blank">
-			<button
-				style={{height: '10px',width: '10px', padding:'10px'}}
+			<span className={styles.controls}>
+				<button onClick={() => onDelete(todo.label)}>x</button>
 
-				>?</button>
-		</a>
+				<a href={todo.link} target="_blank">
+					<button>?</button>
+				</a>
+			</span>
 		</div>
 	)
 }

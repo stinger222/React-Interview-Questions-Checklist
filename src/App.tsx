@@ -14,9 +14,7 @@ const getDefaultTodos = (rawTodos: IRawTodo[]): ITodo[] => {
 
 function App() {
   return (
-		<div>
-			<TodoList defaultTodos={getDefaultTodos(rawTodos)}/>
-		</div>
+		<TodoList defaultTodos={getDefaultTodos(rawTodos)}/>
   )
 }
 

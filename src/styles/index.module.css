@@ -1,0 +1,103 @@
+:root {
+	font-size: 16px;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.todoList {
+	max-width: 1200px;
+	margin-inline: auto;
+}
+
+.todoItem {
+	margin-bottom: 0.5em;
+	padding: 0.3em;
+}
+
+.todoLabel {
+	cursor: pointer;
+	font-size: 1.5em;
+	margin-inline: 0.5em;
+}
+
+.highlighted {
+	color: royalblue
+}
+
+.controls {
+	display: inline-block;
+	margin-top: 0.5em;
+}
+
+.controls button {
+	margin-right: 0.5em;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	--color: rgb(167, 167, 167);
+
+	background: none;
+	outline: none;
+	border: 0.05em solid var(--color);
+	border-radius: 10em;
+	
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	
+	font-size: 1.3em;
+	font-weight: 100;
+	color: var(--color);
+	
+	height: 1.3em;
+	width: 1.3em;
+	cursor: pointer;
+}
+
+input[type="checkbox"] {
+	font-size: 1em;
+	height: 1.2em;
+	width: 1.2em;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+	background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #dcdcdc;
+	border-radius: 50px;
+	border: 3.5px solid #ffffff;
+}
+
+@media (max-width: 800px) {
+	.todoItem:nth-child(2n+1) {
+		background: rgb(243, 243, 243);
+	}
+
+	.controls {
+		display: block;
+	}
+}
+
+@media (min-width: 2200px) {
+	:root {
+		font-size: 1.5em;
+	}
+
+	.todoList {
+		max-width: 70vw;
+	}
+}
+
+@media (min-width: 3000px) {
+	:root {
+		font-size: 2em;
+	}
+
+}

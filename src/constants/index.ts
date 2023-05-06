@@ -1,6 +1,5 @@
 import { IRawTodo } from "../types"
 
-
 export const rawTodos: IRawTodo[] = [
 	{
 		label: "What is React?",

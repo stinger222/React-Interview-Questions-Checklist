@@ -1,6 +1,7 @@
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import { ITodo } from "../types"
 import TodoItem from "./TodoItem"
+import styles from "../styles/index.module.css"
 
 interface IProps {
 	defaultTodos: ITodo[]
@@ -22,7 +23,7 @@ const TodoList: React.FC<IProps> = ({ defaultTodos }) => {
 	}
 	
 	return (
-		<div>
+		<div className={styles.todoList}>
 			{
 				todos.map(todo => (
 					<TodoItem
