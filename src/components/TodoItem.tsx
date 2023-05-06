@@ -17,7 +17,7 @@ const TodoItem: React.FC<IProps> = ({todo, onCheck, onDelete, onHighlight}) => {
 		/>
 
 			<span
-				style={{ color: todo.isImportant ? 'red': 'black', cursor: 'pointer'}}
+				style={{ color: todo.isImportant ? 'royalblue': 'black', cursor: 'pointer'}}
 				onClick={() => onHighlight(todo.label)}
 			>
 				{todo.label}
@@ -27,6 +27,13 @@ const TodoItem: React.FC<IProps> = ({todo, onCheck, onDelete, onHighlight}) => {
 				style={{height: '10px',width: '10px', padding:'10px'}}
 				onClick={() => onDelete(todo.label)}
 			>x</button>
+
+			<a href={todo.link} target="_blank">
+			<button
+				style={{height: '10px',width: '10px', padding:'10px'}}
+
+				>?</button>
+		</a>
 		</div>
 	)
 }

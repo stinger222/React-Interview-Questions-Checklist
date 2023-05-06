@@ -1,13 +1,14 @@
 import './App.css'
 import TodoList from './components/TodoList'
 import { rawTodos } from './constants'
-import { ITodo } from './types'
+import { IRawTodo, ITodo } from './types'
 
-const getDefaultTodos = (rawTodos: string[]): ITodo[] => {
+const getDefaultTodos = (rawTodos: IRawTodo[]): ITodo[] => {
 	return rawTodos.map((todo): ITodo => ({
-		label: todo,
+		label: todo.label,
 		isChecked: false,
-		isImportant: false
+		isImportant: false,
+		link: `https://github.com/sudheerj/reactjs-interview-questions${todo.link}`
 	}))
 }
 
