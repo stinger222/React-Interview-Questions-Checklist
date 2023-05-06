@@ -12,7 +12,9 @@ This is a straightforward tool that can assist you in keeping track of your prog
 
 - **Delete Questions:** Easily delete questions that you don't need.
 
+## Demo
+Check out [the demo](https://stinger222.github.io/React-Interview-Questions-Checklist) yourself!
+
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/39219491/236623310-816c3f21-8375-40d9-9b79-9d99dfd5a755.png)
-
