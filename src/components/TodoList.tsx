@@ -15,7 +15,7 @@ const TodoList: React.FC<IProps> = ({ defaultTodos }) => {
 		setTodos(todos.map(i => i.label === label ? {...i, isChecked: e.target.checked} : i))
 	}
 
-	const handleHightlight = (label: string) => {		
+	const handleHighlight = (label: string) => {		
 		setTodos(todos.map(i => i.label === label ? {...i, isImportant: !i.isImportant} : i))
 	}
 
@@ -36,7 +36,7 @@ const TodoList: React.FC<IProps> = ({ defaultTodos }) => {
 					<TodoItem
 						todo={todo}
 						onCheck={handleCheck}
-						onHighlight={handleHightlight}
+						onHighlight={handleHighlight}
 						onDelete={handleDelete}
 						key={todo.label}
 					/>
