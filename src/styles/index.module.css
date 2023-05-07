@@ -3,6 +3,10 @@
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+body {
+	margin: 0.5em;
+}
+
 .todoList {
 	max-width: 1200px;
 	margin-inline: auto;
@@ -12,6 +16,7 @@
 	margin-bottom: 0.5em;
 	padding: 0.3em;
 	border-radius: 0.5em;
+	word-break: break-word;
 }
 
 .todoLabel {
@@ -84,14 +89,21 @@ input[type="checkbox"] {
 }
 
 ::-webkit-scrollbar {
-	width: 15px;
+	width: 10px;
+	margin: 0;
 	background-color: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
 	background: #dcdcdc;
 	border-radius: 50px;
-	border: 3.5px solid #ffffff;
+	border: 2px solid white;
+}
+
+@media (max-width: 400px) {
+	.todoItem {
+		font-size: max(4vw, 10px);
+	}
 }
 
 @media (max-width: 800px) {
@@ -100,7 +112,7 @@ input[type="checkbox"] {
 	}
 
 	.todoList {
-		padding-top: 2.5em;
+		padding-top: 4em;
 	}
 
 	.controls {
@@ -109,7 +121,7 @@ input[type="checkbox"] {
 
 	.reset {
 		position: absolute;
-		top: 0.2em;
+		top: 0.8em;
 		bottom: initial;
 		right: 50%;
 		translate: 50% 0;
